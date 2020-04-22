@@ -10,12 +10,13 @@ import androidx.room.RoomDatabase
 abstract class CoronaDatabase : RoomDatabase() {
 
     abstract val dataIndonesiaDao: DataIndonesiaDao
+    abstract val dataProvinsiDao: DataProvinsiDao
 
     companion object {
         @Volatile
         private var INSTANCE: CoronaDatabase? = null
 
-        fun getInstance(context: Context) : CoronaDatabase {
+        fun getInstance(context: Context): CoronaDatabase {
             synchronized(this) {
                 var instance = INSTANCE
 

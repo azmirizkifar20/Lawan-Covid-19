@@ -5,14 +5,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if4055.lawancorona.R
+import org.d3if4055.lawancorona.database.DataProvinsiDB
 import org.d3if4055.lawancorona.databinding.ItemProvinsiBinding
-import org.d3if4055.lawancorona.network.DataProvinsi
 
 @Suppress("SpellCheckingInspection")
 class ProvinsiAdapter : RecyclerView.Adapter<ProvinsiAdapter.ProvinsiViewHolder>() {
 
     // list provinsi
-    private var listProvinsi = mutableListOf<DataProvinsi>()
+    private var listProvinsi = mutableListOf<DataProvinsiDB>()
 
     inner class ProvinsiViewHolder(
         val itemProvinsiBinding: ItemProvinsiBinding
@@ -26,14 +26,14 @@ class ProvinsiAdapter : RecyclerView.Adapter<ProvinsiAdapter.ProvinsiViewHolder>
     )
 
     override fun onBindViewHolder(holder: ProvinsiViewHolder, position: Int) {
-        holder.itemProvinsiBinding.tvProvinsi.text = listProvinsi[position].attributes.Provinsi
-        holder.itemProvinsiBinding.tvPositif.text = listProvinsi[position].attributes.Kasus_Posi.toString()
-        holder.itemProvinsiBinding.tvSembuh.text = listProvinsi[position].attributes.Kasus_Semb.toString()
-        holder.itemProvinsiBinding.tvMeninggal.text = listProvinsi[position].attributes.Kasus_Meni.toString()
+        holder.itemProvinsiBinding.tvProvinsi.text = listProvinsi[position].Provinsi
+        holder.itemProvinsiBinding.tvPositif.text = listProvinsi[position].Kasus_Posi.toString()
+        holder.itemProvinsiBinding.tvSembuh.text = listProvinsi[position].Kasus_Semb.toString()
+        holder.itemProvinsiBinding.tvMeninggal.text = listProvinsi[position].Kasus_Meni.toString()
     }
 
-    fun addListProvinsi(provinsi: List<DataProvinsi>) {
-        listProvinsi = provinsi as MutableList<DataProvinsi>
+    fun addListProvinsi(provinsi: List<DataProvinsiDB>) {
+        listProvinsi = provinsi as MutableList<DataProvinsiDB>
         notifyDataSetChanged()
     }
 

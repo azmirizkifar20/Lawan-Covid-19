@@ -3,9 +3,10 @@ package org.d3if4055.lawancorona.ui.provinsi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityProvinsiBinding
@@ -25,7 +26,9 @@ class ProvinsiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_provinsi)
-        viewModel = ViewModelProviders.of(this).get(CoronaViewModel::class.java)
+
+        // init viewmodel
+        viewModel = ViewModelProvider(this).get(CoronaViewModel::class.java)
 
         // set recyclerview
         val recyclerView = binding.rvProvinsi
@@ -38,18 +41,29 @@ class ProvinsiActivity : AppCompatActivity() {
     }
 
     private fun initUI() {
-        viewModel.data.observe({ lifecycle }, {
-            binding.tvPositif.text = it.positif
-            binding.tvSembuh.text = it.sembuh
-            binding.tvMeninggal.text = it.meninggal
+        // observe data dari local db
+        viewModel.dataIndo.observe({ lifecycle }, { list ->
+            Log.i("testingOfflineIndo", list.toString())
+            list.map {
+                binding.tvPositif.text = it.positif
+                binding.tvSembuh.text = it.sembuh
+                binding.tvMeninggal.text = it.meninggal
+            }
         })
 
-        viewModel.dataProvinsi.observe({ lifecycle }, {
-            provinsiAdapter.addListProvinsi(it)
+        viewModel.dataProv.observe({ lifecycle }, {
+            Log.i("testingOfflineProv", it.toString())
+            if (it.isNotEmpty()) {
+                Log.i("testing", "pengguna lama")
+                provinsiAdapter.addListProvinsi(it.sortedByDescending { data -> data.Kasus_Posi })
+            } else {
+                Log.i("testing", "pengguna baru")
+                provinsiAdapter.addListProvinsi(it)
+            }
         })
 
         viewModel.response.observe({ lifecycle }, {
-            if (it.isNotEmpty()) {
+            if (it.isNotEmpty() && it != "") {
                 Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
             }
         })

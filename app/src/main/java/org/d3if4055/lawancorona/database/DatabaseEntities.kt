@@ -4,7 +4,8 @@ package org.d3if4055.lawancorona.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import org.d3if4055.lawancorona.network.DataIndonesia
+import org.d3if4055.lawancorona.network.provinsi.Attributes
+import org.d3if4055.lawancorona.network.indonesia.DataIndonesia
 
 @Entity(tableName = "data_indonesia")
 data class DataIndonesiaDB constructor (
@@ -16,7 +17,7 @@ data class DataIndonesiaDB constructor (
 )
 
 @Entity(tableName = "data_provinsi")
-data class DataProvinsiDB constructor(
+data class DataProvinsiDB constructor (
     @PrimaryKey
     val FID: Int,
     val Kode_Provi: Int,
@@ -25,17 +26,6 @@ data class DataProvinsiDB constructor(
     val Kasus_Semb: Int,
     val Kasus_Meni: Int
 )
-
-fun List<DataIndonesiaDB>.convertToNetworkModel(): List<DataIndonesia> {
-    return map {
-        DataIndonesia(
-            name = it.name,
-            positif = it.positif,
-            sembuh = it.sembuh,
-            meninggal = it.meninggal
-        )
-    }
-}
 
 fun List<DataIndonesia>.convertToDatabaseModel(): List<DataIndonesiaDB> {
     return map {
@@ -46,4 +36,15 @@ fun List<DataIndonesia>.convertToDatabaseModel(): List<DataIndonesiaDB> {
             meninggal = it.meninggal
         )
     }
+}
+
+fun Attributes.convertObjectProvinsiToDatabaseModel(): DataProvinsiDB {
+    return DataProvinsiDB(
+            FID = FID,
+            Kode_Provi = Kode_Provi,
+            Provinsi = Provinsi,
+            Kasus_Posi = Kasus_Posi,
+            Kasus_Semb = Kasus_Semb,
+            Kasus_Meni = Kasus_Meni
+        )
 }

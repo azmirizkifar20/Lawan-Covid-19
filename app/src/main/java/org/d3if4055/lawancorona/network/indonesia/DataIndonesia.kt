@@ -1,5 +1,5 @@
 
-package org.d3if4055.lawancorona.network
+package org.d3if4055.lawancorona.network.indonesia
 
 @Suppress("SpellCheckingInspection")
 data class DataIndonesia (

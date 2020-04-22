@@ -1,59 +1,56 @@
 package org.d3if4055.lawancorona.ui
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import org.d3if4055.lawancorona.network.ApiCorona
-import org.d3if4055.lawancorona.network.DataIndonesia
-import org.d3if4055.lawancorona.network.DataProvinsi
+import org.d3if4055.lawancorona.database.*
+import org.d3if4055.lawancorona.repository.IndonesiaRepository
+import org.d3if4055.lawancorona.repository.ProvinsiRepository
 
 @Suppress("SpellCheckingInspection")
-class CoronaViewModel : ViewModel() {
+class CoronaViewModel(application: Application) : AndroidViewModel(application) {
 
-    // buat tempat penampung data
-    private val _data = MutableLiveData<DataIndonesia>()
-    val data: LiveData<DataIndonesia>
-        get() = _data
+    private val indonesiaDao: DataIndonesiaDao = CoronaDatabase.getInstance(application).dataIndonesiaDao
+    private val provinsiDao: DataProvinsiDao = CoronaDatabase.getInstance(application).dataProvinsiDao
+    private val indonesiaRepository: IndonesiaRepository = IndonesiaRepository(indonesiaDao)
+    private val provinsiRepository: ProvinsiRepository = ProvinsiRepository(provinsiDao)
 
-    private val _dataProvinsi = MutableLiveData<List<DataProvinsi>>()
-    val dataProvinsi: LiveData<List<DataProvinsi>>
-        get() = _dataProvinsi
+    // buat tempat response
+    private val _dataIndo: LiveData<List<DataIndonesiaDB>>
+    val dataIndo : LiveData<List<DataIndonesiaDB>>
+        get() = _dataIndo
+
+    private val _dataProv: LiveData<List<DataProvinsiDB>>
+    val dataProv : LiveData<List<DataProvinsiDB>>
+        get() = _dataProv
 
     private val _response = MutableLiveData<String>()
     val response : LiveData<String>
         get() = _response
 
+    // handling async
     private var job = Job()
     private val uiScope = CoroutineScope(job + Dispatchers.Main)
 
     init {
         _response.value = ""
-        initData()
-    }
-
-    private fun initData() {
         uiScope.launch {
             try {
-                val result = ApiCorona.retrofitService.showData()
-                val resultProvinsi = ApiCorona.retrofitService.showDataProvinsi()
+                indonesiaRepository.refreshDataIndo()
+                provinsiRepository.refreshDataProv()
+                _response.value = "Sinkronisasi berhasil!"
 
-                if (resultProvinsi.isNotEmpty()) {
-                    _dataProvinsi.value = resultProvinsi
-                    result.map {
-                        _data.value = it
-                    }
-                    _response.value = "Berhasil ambil data!"
-                } else {
-                    _response.value = "Data kosong!"
-                }
             } catch (t: Throwable){
-                _response.value = "Tidak ada koneksi internet!"
+                _response.value = ""
             }
         }
+        _dataIndo = indonesiaRepository.indonesia
+        _dataProv = provinsiRepository.provinsi
     }
 
     override fun onCleared() {
