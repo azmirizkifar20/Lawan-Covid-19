@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Lawan Covid-19</string>
+    <string name="jumlah_meninggal">Jumlah meninggal</string>
+    <string name="jumlah_sembuh">Jumlah sembuh</string>
+    <string name="jumlah_positif">Jumlah positif</string>
+    <string name="nama_negara">Nama negara</string>
+    <string name="stay_productive">Stay Productive</string>
+    <string name="data_provinsi">Data Provinsi</string>
+    <string name="data_global">Data Global</string>
+    <string name="data_per_provinsi">Data per-provinsi</string>
+    <string name="statistik_hari_ini">Statistik hari ini</string>
+    <string name="meninggal">Meninggal</string>
+    <string name="sembuh">Sembuh</string>
+    <string name="positif">Positif</string>
+    <string name="_0">0</string>
+    <string name="by_azmirf20">by azmirf20</string>
+    <string name="made_with">Made with</string>
+    <string name="provinsi">Provinsi</string>
+</resources>

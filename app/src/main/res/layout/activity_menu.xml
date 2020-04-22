@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary"
+            tools:context=".ui.menu.MenuActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/hero"
+                    android:layout_width="290dp"
+                    android:layout_height="190dp"
+                    android:layout_marginTop="0dp"
+                    android:src="@drawable/hero" />
+
+                <Button
+                    android:id="@+id/btn_learning"
+                    android:layout_width="220dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/button_radius"
+                    android:drawableEnd="@drawable/ic_gamer"
+                    android:elevation="5dp"
+                    android:fontFamily="@font/righteous"
+                    android:padding="16dp"
+                    android:text="@string/stay_productive"
+                    android:textAllCaps="false"
+                    android:textColor="@color/text_brown"
+                    android:textSize="14sp"
+                    android:foreground="?attr/selectableItemBackground"/>
+
+                <LinearLayout
+                    android:weightSum="2"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_provinsi"
+                        android:layout_width="140dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="7dp"
+                        android:elevation="5dp"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_brown"
+                        android:background="@drawable/button_radius"
+                        android:drawableTop="@drawable/ic_indonesia"
+                        android:text="@string/data_provinsi"
+                        android:foreground="?attr/selectableItemBackground"/>
+
+                    <Button
+                        android:id="@+id/btn_global"
+                        android:layout_width="140dp"
+                        android:layout_height="90dp"
+                        android:layout_margin="5dp"
+                        android:elevation="5dp"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        android:textAllCaps="false"
+                        android:textColor="@color/text_brown"
+                        android:background="@drawable/button_radius"
+                        android:drawableTop="@drawable/ic_global"
+                        android:text="@string/data_global"
+                        android:foreground="?attr/selectableItemBackground"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>
