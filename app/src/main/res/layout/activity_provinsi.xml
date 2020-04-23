@@ -12,14 +12,14 @@
             android:id="@+id/layout_utama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:background="#FBFBFB"
             tools:context=".ui.provinsi.ProvinsiActivity">
 
             <ImageView
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:src="@drawable/ic_arrow_back"/>
 
@@ -54,7 +54,7 @@
                 android:layout_below="@+id/tv_hero"
                 android:textColor="@android:color/black"
                 android:textSize="14sp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginHorizontal="24dp"
                 android:text="@string/statistik_hari_ini"/>
 
@@ -155,47 +155,29 @@
 
             </androidx.cardview.widget.CardView>
 
+
+            <com.mancj.materialsearchbar.MaterialSearchBar
+                android:id="@+id/search_bar"
+                style="@style/MaterialSearchBarLight"
+                android:layout_width="match_parent"
+                app:mt_hint="Custom hint"
+                app:mt_placeholder="Custom placeholder"
+                app:mt_maxSuggestionsCount="5"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_below="@+id/cardview_statistik"
+                app:mt_speechMode="true" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_provinsi"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/azmi"
-                android:layout_below="@+id/cardview_statistik"
-                android:layout_marginBottom="16dp"
+                android:layout_height="30dp"
+                android:layout_below="@+id/search_bar"
+                android:layout_alignParentBottom="true"
                 tools:listitem="@layout/item_provinsi" />
 
-            <LinearLayout
-                android:id="@+id/azmi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/made_with"
-                    android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
-                    android:layout_marginHorizontal="4dp"
-                    android:src="@drawable/heart"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/by_azmirf20"
-                    android:gravity="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp" />
-            </LinearLayout>
         </RelativeLayout>
     </ScrollView>
 </layout>

@@ -37,6 +37,11 @@ class ProvinsiActivity : AppCompatActivity() {
             this.layoutManager = LinearLayoutManager(this@ProvinsiActivity)
         }
 
+        val searchBar = binding.searchBar
+        searchBar.setHint("Cari provinsi")
+        searchBar.setPlaceHolder("Cari provinsi")
+        searchBar.setSpeechMode(true)
+
         initUI()
     }
 

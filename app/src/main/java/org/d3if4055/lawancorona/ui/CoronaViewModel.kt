@@ -46,7 +46,7 @@ class CoronaViewModel(application: Application) : AndroidViewModel(application) 
                 _response.value = "Sinkronisasi berhasil!"
 
             } catch (t: Throwable){
-                _response.value = ""
+                _response.value = "okokok"
             }
         }
         _dataIndo = indonesiaRepository.indonesia
