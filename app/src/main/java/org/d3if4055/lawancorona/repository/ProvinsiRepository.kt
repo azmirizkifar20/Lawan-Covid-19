@@ -5,8 +5,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.d3if4055.lawancorona.database.DataProvinsiDB
 import org.d3if4055.lawancorona.database.DataProvinsiDao
-import org.d3if4055.lawancorona.database.convertObjectProvinsiToDatabaseModel
 import org.d3if4055.lawancorona.network.ApiCorona
+import org.d3if4055.lawancorona.utils.convertObjectProvinsiToDatabaseModel
 
 @Suppress("SpellCheckingInspection")
 class ProvinsiRepository(private val provinsiDao: DataProvinsiDao) {

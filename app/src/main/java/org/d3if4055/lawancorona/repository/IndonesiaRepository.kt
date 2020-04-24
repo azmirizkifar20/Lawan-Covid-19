@@ -4,8 +4,8 @@ import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.d3if4055.lawancorona.database.DataIndonesiaDao
-import org.d3if4055.lawancorona.database.convertToDatabaseModel
 import org.d3if4055.lawancorona.network.ApiCorona
+import org.d3if4055.lawancorona.utils.convertToDatabaseModel
 
 @Suppress("SpellCheckingInspection")
 class IndonesiaRepository (private  val indonesiaDao: DataIndonesiaDao) {

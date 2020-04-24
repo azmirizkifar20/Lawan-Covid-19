@@ -38,8 +38,8 @@ class ProvinsiActivity : AppCompatActivity() {
         }
 
         val searchBar = binding.searchBar
-        searchBar.setHint("Cari provinsi")
-        searchBar.setPlaceHolder("Cari provinsi")
+        searchBar.setHint("Cari provinsi...")
+        searchBar.setPlaceHolder("Cari provinsi...")
         searchBar.setSpeechMode(true)
 
         initUI()

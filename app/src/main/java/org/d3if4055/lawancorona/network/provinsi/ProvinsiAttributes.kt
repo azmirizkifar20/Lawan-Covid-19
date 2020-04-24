@@ -1,7 +1,7 @@
 package org.d3if4055.lawancorona.network.provinsi
 
 @Suppress("SpellCheckingInspection")
-data class Attributes (
+data class ProvinsiAttributes (
     val FID: Int,
     val Kode_Provi: Int,
     val Provinsi: String,

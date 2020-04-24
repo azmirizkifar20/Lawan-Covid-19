@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityMenuBinding
+import org.d3if4055.lawancorona.ui.global.GlobalActivity
 import org.d3if4055.lawancorona.ui.provinsi.ProvinsiActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -22,10 +23,11 @@ class MenuActivity : AppCompatActivity() {
         }
 
         binding.btnGlobal.setOnClickListener {
-            val gmmIntentUri: Uri = Uri.parse("geo:41.8719,12.5674")
-            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-            mapIntent.setPackage("com.google.android.apps.maps")
-            startActivity(mapIntent)
+            startActivity(Intent(this, GlobalActivity::class.java))
+//            val gmmIntentUri: Uri = Uri.parse("geo:41.8719,12.5674")
+//            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+//            mapIntent.setPackage("com.google.android.apps.maps")
+//            startActivity(mapIntent)
         }
     }
 }

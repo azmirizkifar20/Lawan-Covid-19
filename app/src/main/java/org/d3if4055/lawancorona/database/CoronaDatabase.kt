@@ -6,11 +6,16 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Suppress("SpellCheckingInspection")
-@Database(entities = [DataIndonesiaDB::class, DataProvinsiDB::class], version = 1, exportSchema = false)
+@Database(entities = [DataIndonesiaDB::class,
+    DataProvinsiDB::class,
+    DataGlobalDB::class],
+    version = 1,
+    exportSchema = false)
 abstract class CoronaDatabase : RoomDatabase() {
 
     abstract val dataIndonesiaDao: DataIndonesiaDao
     abstract val dataProvinsiDao: DataProvinsiDao
+    abstract val dataGlobal: DataGlobal
 
     companion object {
         @Volatile
