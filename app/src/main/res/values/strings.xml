@@ -18,4 +18,10 @@
     <string name="provinsi">Provinsi</string>
     <string name="tanggal">Kamis, 23 April 2020</string>
     <string name="kasus_positif_covid_19">Kasus positif covid-19</string>
+    <string name="layanan_bantuan">Layanan bantuan</string>
+    <string name="statistik_internasional">Statistik internasional</string>
+    <string name="deskripsi_statistik_inter">Statistik internasional berupa diagram dan perkembangan kasus</string>
+    <string name="cek_disini">Cek disini</string>
+    <string name="diagnosa_mandiri">Diagnosa mandiri</string>
+    <string name="deskripsi_diagnosa">Pengecekan secara mandiri dengan untuk perlindungan kesehatan</string>
 </resources>

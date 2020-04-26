@@ -27,12 +27,6 @@ class GlobalActivity : AppCompatActivity() {
         // init viewmodel
         viewModel = ViewModelProvider(this).get(CoronaViewModel::class.java)
 
-        // search bar
-        val searchBar = binding.searchBar
-        searchBar.setHint("Cari negara...")
-        searchBar.setPlaceHolder("Cari negara...")
-        searchBar.setSpeechMode(true)
-
         initUI()
     }
 
@@ -67,6 +61,15 @@ class GlobalActivity : AppCompatActivity() {
                 Intent(this, MenuActivity::class.java).addFlags(
                     Intent.FLAG_ACTIVITY_CLEAR_TOP
                 ))
+        }
+
+        // layanan bantuan
+        binding.btnStatistik.setOnClickListener {
+            startActivity(Intent(this, StatistikInterActivity::class.java))
+        }
+
+        binding.btnDiagnosa.setOnClickListener {
+            startActivity(Intent(this, DiagnosaMandiriActivity::class.java))
         }
     }
 

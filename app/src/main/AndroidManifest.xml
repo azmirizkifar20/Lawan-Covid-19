@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.global.GlobalActivity"></activity>
+        <activity android:name=".ui.global.DiagnosaMandiriActivity"></activity>
+        <activity android:name=".ui.global.StatistikInterActivity" />
+        <activity android:name=".ui.global.GlobalActivity" />
         <activity android:name=".ui.provinsi.ProvinsiActivity" />
         <activity android:name=".ui.menu.MenuActivity" />
         <activity android:name=".ui.splash.MainActivity">

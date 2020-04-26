@@ -67,11 +67,11 @@ class ProvinsiActivity : AppCompatActivity() {
             }
         })
 
-        viewModel.response.observe({ lifecycle }, {
-            if (it.isNotEmpty() && it != "") {
-                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-            }
-        })
+//        viewModel.response.observe({ lifecycle }, {
+//            if (it.isNotEmpty() && it != "") {
+//                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+//            }
+//        })
 
         binding.back.setOnClickListener {
             startActivity(Intent(this, MenuActivity::class.java).addFlags(
