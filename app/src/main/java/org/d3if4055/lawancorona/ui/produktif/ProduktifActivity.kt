@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityProduktifBinding
 import org.d3if4055.lawancorona.ui.menu.MenuActivity
+import org.d3if4055.lawancorona.utils.*
 
 @Suppress("SpellCheckingInspection")
 class ProduktifActivity : AppCompatActivity() {
@@ -33,14 +34,14 @@ class ProduktifActivity : AppCompatActivity() {
         // belajar android
         binding.belajarAndroid.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.youtube.com/user/SimplifiedCoding")
+            intent.data = Uri.parse(URL_LEARN_ANDROID)
             startActivity(intent)
         }
 
         // belajar web
         binding.belajarWeb.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg")
+            intent.data = Uri.parse(URL_LEARN_WEB)
             startActivity(intent)
         }
 
@@ -52,14 +53,14 @@ class ProduktifActivity : AppCompatActivity() {
         // belanja online
         binding.belanjaOnline.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.tokopedia.com/")
+            intent.data = Uri.parse(URL_TOKOPEDIA)
             startActivity(intent)
         }
 
         // denger tausiyah
         binding.kajian.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://www.youtube.com/channel/UCVes0G5DqPa3ZHPL4W2OrhA")
+            intent.data = Uri.parse(URL_TAUSIYAH)
             startActivity(intent)
         }
 
@@ -71,14 +72,14 @@ class ProduktifActivity : AppCompatActivity() {
         // aktif github
         binding.github.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://github.com/azmirizkifar20")
+            intent.data = Uri.parse(URL_GITHUB)
             startActivity(intent)
         }
 
         // baca quran
         binding.quran.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse("https://bl.app.link/BukaQuran")
+            intent.data = Uri.parse(URL_QURAN)
             startActivity(intent)
         }
     }

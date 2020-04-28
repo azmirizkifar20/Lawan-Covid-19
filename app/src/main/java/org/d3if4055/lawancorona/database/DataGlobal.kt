@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection")
+
 package org.d3if4055.lawancorona.database
 
 import androidx.lifecycle.LiveData

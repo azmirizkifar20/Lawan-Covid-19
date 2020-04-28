@@ -14,6 +14,7 @@ import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityProvinsiBinding
 import org.d3if4055.lawancorona.ui.CoronaViewModel
 import org.d3if4055.lawancorona.ui.menu.MenuActivity
+import org.d3if4055.lawancorona.utils.SEARCH_HINT
 
 @Suppress("SpellCheckingInspection")
 class ProvinsiActivity : AppCompatActivity() {
@@ -41,8 +42,8 @@ class ProvinsiActivity : AppCompatActivity() {
 
         // init material searchbar
         val searchBar = binding.searchBar
-        searchBar.setHint("Cari provinsi...")
-        searchBar.setPlaceHolder("Cari provinsi...")
+        searchBar.setHint(SEARCH_HINT)
+        searchBar.setPlaceHolder(SEARCH_HINT)
         searchBar.setSearchIcon(R.drawable.ic_search)
 
         // searchbar event

@@ -7,6 +7,7 @@ import org.d3if4055.lawancorona.database.DataGlobal
 import org.d3if4055.lawancorona.network.ApiCorona
 import org.d3if4055.lawancorona.utils.convertObjectPositifToDatabaseModel
 
+@Suppress("SpellCheckingInspection")
 class GlobalRepository(private val global: DataGlobal) {
 
     val dataGlobal = global.getDataGlobal()

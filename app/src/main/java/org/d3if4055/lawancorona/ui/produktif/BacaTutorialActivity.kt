@@ -8,6 +8,7 @@ import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityBacaTutorialBinding
+import org.d3if4055.lawancorona.utils.URL_MEDIUM
 
 @Suppress("SpellCheckingInspection")
 class BacaTutorialActivity : AppCompatActivity() {
@@ -40,6 +41,6 @@ class BacaTutorialActivity : AppCompatActivity() {
         // scroll support
         webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
         webView.webViewClient = WebViewClient()
-        webView.loadUrl("https://medium.com/chevalier-lab")
+        webView.loadUrl(URL_MEDIUM)
     }
 }

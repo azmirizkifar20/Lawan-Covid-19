@@ -8,7 +8,9 @@ import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityDiagnosaMandiriBinding
+import org.d3if4055.lawancorona.utils.URL_DIAGNOSA
 
+@Suppress("SpellCheckingInspection")
 class DiagnosaMandiriActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDiagnosaMandiriBinding
@@ -39,6 +41,6 @@ class DiagnosaMandiriActivity : AppCompatActivity() {
         // scroll support
         webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
         webView.webViewClient = WebViewClient()
-        webView.loadUrl("https://www.prixa.ai/")
+        webView.loadUrl(URL_DIAGNOSA)
     }
 }

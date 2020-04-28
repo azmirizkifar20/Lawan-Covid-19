@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection")
+
 package org.d3if4055.lawancorona.database
 
 import androidx.lifecycle.LiveData
@@ -6,7 +8,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
-@Suppress("SpellCheckingInspection")
 @Dao
 interface DataProvinsiDao {
     @Query("SELECT * FROM data_provinsi")

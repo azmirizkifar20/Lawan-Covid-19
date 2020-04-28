@@ -7,11 +7,11 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import org.d3if4055.lawancorona.network.global.DataGlobal
 import org.d3if4055.lawancorona.network.indonesia.DataIndonesia
 import org.d3if4055.lawancorona.network.provinsi.DataProvinsi
+import org.d3if4055.lawancorona.utils.*
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-const val BASE_URL = "https://api.kawalcorona.com/"
 
 val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -25,19 +25,19 @@ private val retrofit = Retrofit.Builder()
 // API Data
 interface ApiService {
 
-    @GET("indonesia")
+    @GET(GET_INDONESIA)
     suspend fun showData(): List<DataIndonesia>
 
-    @GET("indonesia/provinsi")
+    @GET(GET_PROVINSI)
     suspend fun showDataProvinsi(): List<DataProvinsi>
 
-    @GET("positif")
+    @GET(GET_POSITIF)
     suspend fun showPositifCase(): DataGlobal
 
-    @GET("sembuh")
+    @GET(GET_SEMBUH)
     suspend fun showSembuhCase(): DataGlobal
 
-    @GET("meninggal")
+    @GET(GET_MENINGGAL)
     suspend fun showMeninggalCase(): DataGlobal
 }
 

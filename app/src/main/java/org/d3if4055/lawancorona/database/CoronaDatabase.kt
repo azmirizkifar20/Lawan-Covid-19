@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import org.d3if4055.lawancorona.utils.CORONA_DB
 
 @Suppress("SpellCheckingInspection")
 @Database(entities = [DataIndonesiaDB::class,
@@ -29,7 +30,7 @@ abstract class CoronaDatabase : RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         CoronaDatabase::class.java,
-                        "corona_db"
+                        CORONA_DB
                     )
                         .fallbackToDestructiveMigration()
                         .build()

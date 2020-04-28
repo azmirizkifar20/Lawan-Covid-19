@@ -8,6 +8,7 @@ import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityEdukasiCovidBinding
+import org.d3if4055.lawancorona.utils.URL_EDUKASI_COVID
 
 @Suppress("SpellCheckingInspection")
 class EdukasiCovidActivity : AppCompatActivity() {
@@ -40,6 +41,6 @@ class EdukasiCovidActivity : AppCompatActivity() {
         // scroll support
         webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
         webView.webViewClient = WebViewClient()
-        webView.loadUrl("https://www.prixa.ai/post/corona-covid-19")
+        webView.loadUrl(URL_EDUKASI_COVID)
     }
 }

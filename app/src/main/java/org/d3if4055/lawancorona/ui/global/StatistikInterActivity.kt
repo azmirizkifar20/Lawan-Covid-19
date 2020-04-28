@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityStatistikInterBinding
+import org.d3if4055.lawancorona.utils.URL_STATISTIK_GLOBAL
 
 
 @Suppress("SpellCheckingInspection")
@@ -41,6 +42,6 @@ class StatistikInterActivity : AppCompatActivity() {
         // scroll support
         webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
         webView.webViewClient = WebViewClient()
-        webView.loadUrl("https://www.worldometers.info/coronavirus/?utm_campaign=homeAdUOA?Si")
+        webView.loadUrl(URL_STATISTIK_GLOBAL)
     }
 }

@@ -4,8 +4,11 @@ package org.d3if4055.lawancorona.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import org.d3if4055.lawancorona.utils.DATA_GLOBAL
+import org.d3if4055.lawancorona.utils.DATA_INDONESIA
+import org.d3if4055.lawancorona.utils.DATA_PROVINSI
 
-@Entity(tableName = "data_indonesia")
+@Entity(tableName = DATA_INDONESIA)
 data class DataIndonesiaDB constructor (
     @PrimaryKey
     val name: String,
@@ -14,7 +17,7 @@ data class DataIndonesiaDB constructor (
     val meninggal: String
 )
 
-@Entity(tableName = "data_provinsi")
+@Entity(tableName = DATA_PROVINSI)
 data class DataProvinsiDB constructor (
     @PrimaryKey
     val FID: Int,
@@ -25,7 +28,7 @@ data class DataProvinsiDB constructor (
     val Kasus_Meni: Int
 )
 
-@Entity(tableName = "data_global")
+@Entity(tableName = DATA_GLOBAL)
 data class DataGlobalDB constructor(
     @PrimaryKey
     val name: String,
