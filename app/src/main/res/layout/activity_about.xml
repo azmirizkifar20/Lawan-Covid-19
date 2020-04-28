@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:id="@+id/layout_utama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FBFBFB"
+            tools:context=".ui.about.AboutActivity">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/gradient_blue"/>
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_arrow_back_white"/>
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="270dp"
+                android:layout_height="53dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/header_global"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_hero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/imageView2"
+                android:layout_alignEnd="@+id/imageView2"
+                android:layout_alignBottom="@+id/imageView2"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="@string/about_apps"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
+
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview_deskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView2"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="120dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="12dp">
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/aplikasi"
+                            android:textColor="@color/text_brown_prov"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="@string/lawan_covid_19a"
+                            android:textColor="@color/text_brown_prov"
+                            android:textSize="14sp" />
+
+                        <TextView
+                            android:id="@+id/tv_deskripsi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="16dp"
+                            android:text="@string/app_version_1_0"
+                            android:textColor="@color/text_brown"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:elevation="2dp"
+                android:layout_width="240dp"
+                android:layout_height="170dp"
+                android:layout_marginTop="-97dp"
+                android:layout_marginEnd="-20dp"
+                android:layout_alignTop="@+id/cardview_deskripsi"
+                android:layout_alignEnd="@+id/cardview_deskripsi"
+                android:src="@drawable/ic_header_about" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_credits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardview_deskripsi"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="@string/credits_app"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_gravity="center"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Icons by "
+                            android:textColor="@color/text_brown"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/flaticon"
+                            android:textColor="@color/text_brown_prov"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Illustration by "
+                            android:textColor="@color/text_brown"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/undraw_co"
+                            android:textColor="@color/text_brown_prov"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginBottom="2dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Diagnosa mandiri by "
+                            android:textColor="@color/text_brown"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/prixa_ai"
+                            android:textColor="@color/text_brown_prov"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginHorizontal="24dp"
+                        android:layout_marginBottom="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Covid-19 data by "
+                            android:textColor="@color/text_brown"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="kawalcorona.com"
+                            android:textColor="@color/text_brown_prov"
+                            android:textSize="12sp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_produktif"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardview_credits"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:text="Sumber kegiatan produktif"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_gravity="center"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_marginLeft="24dp"
+                            android:layout_width="0dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.6">
+
+                            <TextView
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/prixa_ai"
+                                android:textColor="@color/text_brown_prov"
+                                android:textSize="12sp"/>
+
+                            <TextView
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/github_com"
+                                android:textColor="@color/text_brown_prov"
+                                android:textSize="12sp"/>
+
+                            <TextView
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/bukaquran"
+                                android:textColor="@color/text_brown_prov"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_marginBottom="16dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.4">
+
+                            <TextView
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/youtube_com"
+                                android:textColor="@color/text_brown_prov"
+                                android:textSize="12sp"/>
+
+                            <TextView
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/tokopedia_com"
+                                android:textColor="@color/text_brown_prov"
+                                android:textSize="12sp"/>
+
+                            <TextView
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/medium_com_chevalier_lab"
+                                android:textColor="@color/text_brown_prov"
+                                android:textSize="12sp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginVertical="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_marginHorizontal="4dp"
+                    android:src="@drawable/ic_gmail"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/m_azmirizkifar20_gmail_com"
+                    android:gravity="center"
+                    android:textColor="@color/text_brown_prov"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>
