@@ -3,6 +3,8 @@ package org.d3if4055.lawancorona.ui.provinsi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -37,16 +39,30 @@ class ProvinsiActivity : AppCompatActivity() {
             this.layoutManager = LinearLayoutManager(this@ProvinsiActivity)
         }
 
+        // init material searchbar
         val searchBar = binding.searchBar
         searchBar.setHint("Cari provinsi...")
         searchBar.setPlaceHolder("Cari provinsi...")
-        searchBar.setSpeechMode(true)
+        searchBar.setSearchIcon(R.drawable.ic_search)
+
+        // searchbar event
+        searchBar.addTextChangeListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) { }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) { }
+
+            // event ketika text berubah/diketik
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                provinsiAdapter.filter.filter(s)
+            }
+
+        })
 
         initUI()
     }
 
     private fun initUI() {
-        // observe data dari local db
+        // observe data dari room db
         viewModel.dataIndo.observe({ lifecycle }, { list ->
             Log.i("testingOfflineIndo", list.toString())
             list.map {
@@ -56,6 +72,7 @@ class ProvinsiActivity : AppCompatActivity() {
             }
         })
 
+        // observe data provinsi dari room db
         viewModel.dataProv.observe({ lifecycle }, {
             Log.i("testingOfflineProv", it.toString())
             if (it.isNotEmpty()) {
@@ -67,11 +84,12 @@ class ProvinsiActivity : AppCompatActivity() {
             }
         })
 
-//        viewModel.response.observe({ lifecycle }, {
-//            if (it.isNotEmpty() && it != "") {
-//                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
-//            }
-//        })
+        // observe respon
+        viewModel.response.observe({ lifecycle }, {
+            if (it.isNotEmpty() && it != "") {
+                Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+            }
+        })
 
         binding.back.setOnClickListener {
             startActivity(Intent(this, MenuActivity::class.java).addFlags(

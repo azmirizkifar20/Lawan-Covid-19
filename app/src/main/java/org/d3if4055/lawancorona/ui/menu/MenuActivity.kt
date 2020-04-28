@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityMenuBinding
+import org.d3if4055.lawancorona.ui.produktif.ProduktifActivity
 import org.d3if4055.lawancorona.ui.global.GlobalActivity
 import org.d3if4055.lawancorona.ui.provinsi.ProvinsiActivity
 
@@ -23,6 +24,10 @@ class MenuActivity : AppCompatActivity() {
 
         binding.btnGlobal.setOnClickListener {
             startActivity(Intent(this, GlobalActivity::class.java))
+        }
+
+        binding.btnLearning.setOnClickListener {
+            startActivity(Intent(this, ProduktifActivity::class.java))
         }
     }
 }

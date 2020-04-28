@@ -24,4 +24,10 @@
     <string name="cek_disini">Cek disini</string>
     <string name="diagnosa_mandiri">Diagnosa mandiri</string>
     <string name="deskripsi_diagnosa">Pengecekan secara mandiri dengan untuk perlindungan kesehatan</string>
+    <string name="belajar_android">Belajar android</string>
+    <string name="baca_tutorial">Baca tutorial</string>
+    <string name="belajar_website">Belajar website</string>
+    <string name="edukasi_covid_19">Edukasi covid-19</string>
+    <string name="baca_quran">Baca quran</string>
+    <string name="aktif_github">Aktif github</string>
 </resources>
