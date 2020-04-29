@@ -27,7 +27,6 @@
     <string name="belajar_android">Belajar android</string>
     <string name="baca_tutorial">Baca tutorial</string>
     <string name="belajar_website">Belajar website</string>
-    <string name="edukasi_covid_19">Edukasi covid-19</string>
     <string name="baca_quran">Baca quran</string>
     <string name="aktif_github">Aktif github</string>
     <string name="deskripsi">Aplikasi ini dibuat bertujuan untuk memberikan informasi terkait jumlah terdata korban virus covid-19, dan membantu anda agar tetap produktif.</string>
@@ -46,4 +45,7 @@
     <string name="tokopedia_com">Tokopedia.com</string>
     <string name="medium_com_chevalier_lab">medium.com/chevalier-lab</string>
     <string name="m_azmirizkifar20_gmail_com">m.azmirizkifar20@gmail.com</string>
+    <string name="denger_tausiyah">Denger tausiyah</string>
+    <string name="edukasi_corona">Edukasi corona</string>
+    <string name="denger_tausiyah">Denger tausiyah</string>
 </resources>

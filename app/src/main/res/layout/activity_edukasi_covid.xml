@@ -36,7 +36,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
-                android:text="@string/edukasi_covid_19"
+                android:text="@string/edukasi_corona"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
