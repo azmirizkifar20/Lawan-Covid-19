@@ -4,7 +4,7 @@ import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.d3if4055.lawancorona.database.DataGlobal
-import org.d3if4055.lawancorona.network.ApiCorona
+import org.d3if4055.lawancorona.network.service.ApiCorona
 import org.d3if4055.lawancorona.utils.convertObjectPositifToDatabaseModel
 
 @Suppress("SpellCheckingInspection")

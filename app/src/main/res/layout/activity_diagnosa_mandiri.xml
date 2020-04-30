@@ -48,6 +48,14 @@
             android:layout_height="match_parent"
             android:layout_below="@id/navbar"/>
 
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/colorPrimary"
+            android:visibility="visible" />
     </RelativeLayout>
 
 </layout>

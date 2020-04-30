@@ -11,7 +11,7 @@ import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityGlobalBinding
 import org.d3if4055.lawancorona.ui.CoronaViewModel
 import org.d3if4055.lawancorona.ui.menu.MenuActivity
-import org.d3if4055.lawancorona.utils.DATE_PATTERN
+import org.d3if4055.lawancorona.utils.Constants.DATE_PATTERN
 import org.d3if4055.lawancorona.utils.getCurrentDateTime
 import org.d3if4055.lawancorona.utils.toStringFormat
 

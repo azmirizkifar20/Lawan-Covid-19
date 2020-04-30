@@ -14,7 +14,7 @@ import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityProvinsiBinding
 import org.d3if4055.lawancorona.ui.CoronaViewModel
 import org.d3if4055.lawancorona.ui.menu.MenuActivity
-import org.d3if4055.lawancorona.utils.SEARCH_HINT
+import org.d3if4055.lawancorona.utils.Constants.SEARCH_HINT
 
 @Suppress("SpellCheckingInspection")
 class ProvinsiActivity : AppCompatActivity() {

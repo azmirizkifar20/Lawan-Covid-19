@@ -4,9 +4,9 @@ package org.d3if4055.lawancorona.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import org.d3if4055.lawancorona.utils.DATA_GLOBAL
-import org.d3if4055.lawancorona.utils.DATA_INDONESIA
-import org.d3if4055.lawancorona.utils.DATA_PROVINSI
+import org.d3if4055.lawancorona.utils.Constants.DATA_GLOBAL
+import org.d3if4055.lawancorona.utils.Constants.DATA_INDONESIA
+import org.d3if4055.lawancorona.utils.Constants.DATA_PROVINSI
 
 @Entity(tableName = DATA_INDONESIA)
 data class DataIndonesiaDB constructor (

@@ -8,7 +8,12 @@ import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityProduktifBinding
 import org.d3if4055.lawancorona.ui.menu.MenuActivity
-import org.d3if4055.lawancorona.utils.*
+import org.d3if4055.lawancorona.utils.Constants.URL_GITHUB
+import org.d3if4055.lawancorona.utils.Constants.URL_LEARN_ANDROID
+import org.d3if4055.lawancorona.utils.Constants.URL_LEARN_WEB
+import org.d3if4055.lawancorona.utils.Constants.URL_QURAN
+import org.d3if4055.lawancorona.utils.Constants.URL_TAUSIYAH
+import org.d3if4055.lawancorona.utils.Constants.URL_TOKOPEDIA
 
 @Suppress("SpellCheckingInspection")
 class ProduktifActivity : AppCompatActivity() {
@@ -78,9 +83,7 @@ class ProduktifActivity : AppCompatActivity() {
 
         // baca quran
         binding.quran.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(URL_QURAN)
-            startActivity(intent)
+            startActivity(Intent(this, BacaQuranActivity::class.java))
         }
     }
 }

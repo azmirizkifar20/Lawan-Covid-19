@@ -1,4 +1,4 @@
-package org.d3if4055.lawancorona.ui.global
+package org.d3if4055.lawancorona.ui.produktif
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -8,24 +8,22 @@ import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
-import kotlinx.android.synthetic.main.activity_grafik.*
 import org.d3if4055.lawancorona.R
-import org.d3if4055.lawancorona.databinding.ActivityDiagnosaMandiriBinding
-import org.d3if4055.lawancorona.utils.Constants.URL_DIAGNOSA
+import org.d3if4055.lawancorona.databinding.ActivityBacaQuranBinding
+import org.d3if4055.lawancorona.utils.Constants.URL_QURAN
 
-@Suppress("SpellCheckingInspection")
-class DiagnosaMandiriActivity : AppCompatActivity() {
+class BacaQuranActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityDiagnosaMandiriBinding
+    private lateinit var binding: ActivityBacaQuranBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_diagnosa_mandiri)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_baca_quran)
 
         // back button
         binding.back.setOnClickListener {
             startActivity(
-                Intent(this, GlobalActivity::class.java).addFlags(
+                Intent(this, ProduktifActivity::class.java).addFlags(
                     Intent.FLAG_ACTIVITY_CLEAR_TOP
                 ))
         }
@@ -44,7 +42,7 @@ class DiagnosaMandiriActivity : AppCompatActivity() {
         // scroll support
         webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
         webView.webViewClient = WebViewClient()
-        webView.loadUrl(URL_DIAGNOSA)
+        webView.loadUrl(URL_QURAN)
 
         webView.webViewClient = loadingHandler
     }

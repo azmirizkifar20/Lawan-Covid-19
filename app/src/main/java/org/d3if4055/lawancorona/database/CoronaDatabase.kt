@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import org.d3if4055.lawancorona.utils.CORONA_DB
+import org.d3if4055.lawancorona.utils.Constants.CORONA_DB
 
 @Suppress("SpellCheckingInspection")
 @Database(entities = [DataIndonesiaDB::class,

@@ -1,6 +1,7 @@
 package org.d3if4055.lawancorona.ui.menu
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -27,13 +28,22 @@ class MenuActivity : AppCompatActivity() {
             startActivity(Intent(this, GlobalActivity::class.java))
         }
 
+        binding.btnGrafik.setOnClickListener {
+            startActivity(Intent(this, GrafikActivity::class.java))
+        }
+
         binding.btnLearning.setOnClickListener {
             startActivity(Intent(this, ProduktifActivity::class.java))
         }
 
+        binding.btnHotline.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:119")
+            startActivity(intent)
+        }
+
         binding.btnAbout.setOnClickListener {
             startActivity(Intent(this, AboutActivity::class.java))
-
         }
     }
 }

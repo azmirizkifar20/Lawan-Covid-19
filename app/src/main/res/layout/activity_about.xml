@@ -275,7 +275,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/github_com"
+                                android:text="@string/quran"
                                 android:textColor="@color/text_brown_prov"
                                 android:textSize="12sp"/>
 
@@ -283,7 +283,7 @@
                                 android:layout_marginBottom="2dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/bukaquran"
+                                android:text="@string/github_com"
                                 android:textColor="@color/text_brown_prov"
                                 android:textSize="12sp"/>
 

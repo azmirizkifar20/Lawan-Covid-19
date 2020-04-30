@@ -6,7 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.produktif.EdukasiCovidActivity">
+        tools:context=".ui.menu.GrafikActivity">
 
         <RelativeLayout
             android:id="@+id/navbar"
@@ -36,7 +36,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
-                android:text="@string/edukasi_corona"
+                android:text="@string/grafik_nasional"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 

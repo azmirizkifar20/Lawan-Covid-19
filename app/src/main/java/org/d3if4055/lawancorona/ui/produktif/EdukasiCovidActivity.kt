@@ -1,14 +1,16 @@
 package org.d3if4055.lawancorona.ui.produktif
 
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityEdukasiCovidBinding
-import org.d3if4055.lawancorona.utils.URL_EDUKASI_COVID
+import org.d3if4055.lawancorona.utils.Constants.URL_EDUKASI_COVID
 
 @Suppress("SpellCheckingInspection")
 class EdukasiCovidActivity : AppCompatActivity() {
@@ -42,5 +44,16 @@ class EdukasiCovidActivity : AppCompatActivity() {
         webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
         webView.webViewClient = WebViewClient()
         webView.loadUrl(URL_EDUKASI_COVID)
+
+        webView.webViewClient = loadingHandler
+    }
+
+    private val loadingHandler = object : WebViewClient() {
+
+        override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+            binding.loading.visibility = View.GONE
+            super.onPageStarted(view, url, favicon)
+        }
+
     }
 }

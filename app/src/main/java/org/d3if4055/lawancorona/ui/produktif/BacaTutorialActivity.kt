@@ -1,14 +1,16 @@
 package org.d3if4055.lawancorona.ui.produktif
 
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
 import org.d3if4055.lawancorona.R
 import org.d3if4055.lawancorona.databinding.ActivityBacaTutorialBinding
-import org.d3if4055.lawancorona.utils.URL_MEDIUM
+import org.d3if4055.lawancorona.utils.Constants.URL_MEDIUM
 
 @Suppress("SpellCheckingInspection")
 class BacaTutorialActivity : AppCompatActivity() {
@@ -42,5 +44,16 @@ class BacaTutorialActivity : AppCompatActivity() {
         webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
         webView.webViewClient = WebViewClient()
         webView.loadUrl(URL_MEDIUM)
+
+        webView.webViewClient = loadingHandler
+    }
+
+    private val loadingHandler = object : WebViewClient() {
+
+        override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
+            binding.loading.visibility = View.GONE
+            super.onPageStarted(view, url, favicon)
+        }
+
     }
 }
