@@ -60,4 +60,7 @@ dependencies {
 
     // search bar
     implementation 'com.github.mancj:MaterialSearchBar:0.8.2'
+
+    // WorkManager
+    implementation "android.arch.work:work-runtime-ktx:1.0.1"
 }

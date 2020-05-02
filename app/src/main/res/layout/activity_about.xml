@@ -287,6 +287,14 @@
                                 android:textColor="@color/text_brown_prov"
                                 android:textSize="12sp"/>
 
+                            <TextView
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kumparan.com"
+                                android:textColor="@color/text_brown_prov"
+                                android:textSize="12sp"/>
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -301,6 +309,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/youtube_com"
+                                android:textColor="@color/text_brown_prov"
+                                android:textSize="12sp"/>
+
+                            <TextView
+                                android:layout_marginBottom="2dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dirumahaja_xyz"
                                 android:textColor="@color/text_brown_prov"
                                 android:textSize="12sp"/>
 

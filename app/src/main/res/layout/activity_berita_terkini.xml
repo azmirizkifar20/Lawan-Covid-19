@@ -6,7 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.global.DiagnosaMandiriActivity">
+        tools:context=".ui.produktif.BeritaTerkiniActivity">
 
         <RelativeLayout
             android:id="@+id/navbar"
@@ -36,7 +36,7 @@
                 android:layout_toStartOf="@+id/backward"
                 android:layout_toEndOf="@+id/back"
                 android:gravity="center"
-                android:text="@string/diagnosa_mandiri"
+                android:text="@string/berita_terkini"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />
 
@@ -93,6 +93,6 @@
             android:layout_centerInParent="true"
             android:indeterminateTint="@color/colorPrimary"
             android:visibility="visible" />
-    </RelativeLayout>
 
+    </RelativeLayout>
 </layout>

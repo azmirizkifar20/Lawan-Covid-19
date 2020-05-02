@@ -27,11 +27,46 @@
 
                 <ImageView
                     android:layout_width="260dp"
-                    android:layout_height="150dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="40dp"
                     android:layout_marginBottom="4dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/hero" />
+                    android:layout_marginLeft="-70dp"
+                    android:src="@drawable/doctor" />
 
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="260dp"
+                android:layout_height="160dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="-25dp"
+                android:layout_marginLeft="55dp"
+                android:padding="40dp"
+                android:src="@drawable/hero" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:layout_marginLeft="110dp"
+                android:layout_marginTop="-30dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mari sama-sama kita tidak"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="keluar rumah"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
@@ -40,6 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/hero"
                 android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="-50dp"
                 android:layout_marginBottom="8dp"
                 app:cardCornerRadius="12dp">
 

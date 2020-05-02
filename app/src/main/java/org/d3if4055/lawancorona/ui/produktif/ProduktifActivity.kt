@@ -11,6 +11,7 @@ import org.d3if4055.lawancorona.ui.menu.MenuActivity
 import org.d3if4055.lawancorona.utils.Constants.URL_GITHUB
 import org.d3if4055.lawancorona.utils.Constants.URL_LEARN_ANDROID
 import org.d3if4055.lawancorona.utils.Constants.URL_LEARN_WEB
+import org.d3if4055.lawancorona.utils.Constants.URL_PODCAST
 import org.d3if4055.lawancorona.utils.Constants.URL_QURAN
 import org.d3if4055.lawancorona.utils.Constants.URL_TAUSIYAH
 import org.d3if4055.lawancorona.utils.Constants.URL_TOKOPEDIA
@@ -84,6 +85,18 @@ class ProduktifActivity : AppCompatActivity() {
         // baca quran
         binding.quran.setOnClickListener {
             startActivity(Intent(this, BacaQuranActivity::class.java))
+        }
+
+        // berita terkini
+        binding.beritaTerkini.setOnClickListener {
+            startActivity(Intent(this, BeritaTerkiniActivity::class.java))
+        }
+
+        // denger podcast
+        binding.dengerPodcast.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(URL_PODCAST)
+            startActivity(intent)
         }
     }
 }
