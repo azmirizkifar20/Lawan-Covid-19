@@ -25,6 +25,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="8dp"
+                android:contentDescription="@string/back_button_description"
                 android:src="@drawable/ic_arrow_back_white" />
 
             <TextView

@@ -54,4 +54,5 @@
     <string name="berita_terkini">Berita terkini</string>
     <string name="denger_podcast">Denger podcast</string>
     <string name="dirumahaja_xyz">dirumahaja.xyz</string>
+    <string name="back_button_description">Tombol untuk kembali ke halaman menu</string>
 </resources>
