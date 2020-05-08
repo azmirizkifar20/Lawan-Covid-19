@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.d3if4055.lawancorona">
+    package="org.marproject.lawancovid19">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".LawanCovidApplication"
+        android:name="org.marproject.lawancovid19.LawanCovidApplication"
         android:allowBackup="true"
         android:icon="@mipmap/lawan_covid_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.produktif.BeritaTerkiniActivity"/>
-        <activity android:name=".ui.menu.GrafikActivity" />
-        <activity android:name=".ui.produktif.BacaQuranActivity" />
-        <activity android:name=".ui.about.AboutActivity" />
-        <activity android:name=".ui.produktif.EdukasiCovidActivity" />
-        <activity android:name=".ui.produktif.BacaTutorialActivity" />
-        <activity android:name=".ui.produktif.ProduktifActivity" />
-        <activity android:name=".ui.global.DiagnosaMandiriActivity" />
-        <activity android:name=".ui.global.StatistikInterActivity" />
-        <activity android:name=".ui.global.GlobalActivity" />
-        <activity android:name=".ui.provinsi.ProvinsiActivity" />
-        <activity android:name=".ui.menu.MenuActivity" />
-        <activity android:name=".ui.splash.MainActivity">
+        <activity android:name="org.marproject.lawancovid19.ui.produktif.BeritaTerkiniActivity"/>
+        <activity android:name="org.marproject.lawancovid19.ui.menu.GrafikActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.produktif.BacaQuranActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.about.AboutActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.produktif.EdukasiCovidActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.produktif.BacaTutorialActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.produktif.ProduktifActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.global.DiagnosaMandiriActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.global.StatistikInterActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.global.GlobalActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.provinsi.ProvinsiActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.menu.MenuActivity" />
+        <activity android:name="org.marproject.lawancovid19.ui.splash.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
