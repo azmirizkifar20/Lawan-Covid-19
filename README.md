@@ -6,19 +6,19 @@ Aplikasi android untuk monitoring data covid-19 dan membantu user agar lebih pro
 
 ## Tampilan aplikasi :
 > Menu
-![Menu](https://user-images.githubusercontent.com/43155964/81415478-b4922f80-9172-11ea-8737-04529fcbc6ff.jpg)
+![Menu](https://user-images.githubusercontent.com/43155964/81416466-f8d1ff80-9173-11ea-9c93-8ccba9a4a85a.jpg)
 
 > Data provinsi
-![Data provinsi](https://user-images.githubusercontent.com/43155964/81415608-dd1a2980-9172-11ea-87c4-df2d94644ec5.jpg)
+![Data provinsi](https://user-images.githubusercontent.com/43155964/81416513-0ab3a280-9174-11ea-941b-4133ca21852f.jpg)
 
 > Data global
-![Data global](https://user-images.githubusercontent.com/43155964/81415728-05a22380-9173-11ea-9f67-d8e0183cf4db.jpg)
+![Data global](https://user-images.githubusercontent.com/43155964/81416581-1acb8200-9174-11ea-8694-2552a415662f.jpg)
 
 > Saran aktivitas
-![Produktif](https://user-images.githubusercontent.com/43155964/81415886-384c1c00-9173-11ea-9607-60a4de15ba24.jpg)
+![Produktif](https://user-images.githubusercontent.com/43155964/81416612-26b74400-9174-11ea-8cb7-ddce8874824a.jpg)
 
 > Data grafik (webview)
-![Grafik nasional](https://user-images.githubusercontent.com/43155964/81416042-62054300-9173-11ea-9c61-caa81d2cf6b8.jpg)
+![Grafik nasional](https://user-images.githubusercontent.com/43155964/81416648-359df680-9174-11ea-9adc-ca315a0b3cb2.jpg)
 
 > About apps
-![About](https://user-images.githubusercontent.com/43155964/81416156-88c37980-9173-11ea-87dc-946b7849718e.jpg)
+![About](https://user-images.githubusercontent.com/43155964/81416685-42bae580-9174-11ea-9bc2-5fd8d957655b.jpg)
