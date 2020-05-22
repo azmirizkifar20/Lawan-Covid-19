@@ -4,6 +4,9 @@ Aplikasi android untuk monitoring data covid-19 dan membantu user agar lebih pro
 ## Sumber data :
 > https://kawalcorona.com/
 
+## Coba aplikasi :
+> https://s.id/lawancovid-19
+
 ## Tampilan aplikasi :
 > Menu
 ![Menu](https://user-images.githubusercontent.com/43155964/81416466-f8d1ff80-9173-11ea-9c93-8ccba9a4a85a.jpg)
