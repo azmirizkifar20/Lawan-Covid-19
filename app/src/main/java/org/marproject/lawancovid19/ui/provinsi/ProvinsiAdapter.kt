@@ -11,6 +11,7 @@ import org.marproject.lawancovid19.database.DataProvinsiDB
 import org.marproject.lawancovid19.databinding.ItemProvinsiBinding
 import java.util.*
 
+// class ini tidak terpakai karena digantikan oleh reusable adapter
 @Suppress("SpellCheckingInspection")
 class ProvinsiAdapter : RecyclerView.Adapter<ProvinsiAdapter.ProvinsiViewHolder>(), Filterable {
 

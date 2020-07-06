@@ -6,15 +6,20 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_provinsi.view.*
 import org.marproject.lawancovid19.R
+import org.marproject.lawancovid19.database.DataProvinsiDB
 import org.marproject.lawancovid19.databinding.ActivityProvinsiBinding
 import org.marproject.lawancovid19.ui.CoronaViewModel
 import org.marproject.lawancovid19.ui.menu.MenuActivity
 import org.marproject.lawancovid19.utils.Constants.SEARCH_HINT
+import org.marproject.reusablerecyclerviewadapter.ReusableAdapter
+import org.marproject.reusablerecyclerviewadapter.interfaces.AdapterCallback
 
 @Suppress("SpellCheckingInspection")
 class ProvinsiActivity : AppCompatActivity() {
@@ -24,7 +29,7 @@ class ProvinsiActivity : AppCompatActivity() {
     private lateinit var viewModel: CoronaViewModel
 
     // buat adapter
-    private val provinsiAdapter = ProvinsiAdapter()
+    private lateinit var adapter: ReusableAdapter<DataProvinsiDB>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,12 +38,8 @@ class ProvinsiActivity : AppCompatActivity() {
         // init viewmodel
         viewModel = ViewModelProvider(this).get(CoronaViewModel::class.java)
 
-        // set recyclerview
-        val recyclerView = binding.rvProvinsi
-        recyclerView.apply {
-            this.adapter = provinsiAdapter
-            this.layoutManager = LinearLayoutManager(this@ProvinsiActivity)
-        }
+        // init adapter
+        adapter = ReusableAdapter(this)
 
         // init material searchbar
         val searchBar = binding.searchBar
@@ -54,7 +55,7 @@ class ProvinsiActivity : AppCompatActivity() {
 
             // event ketika text berubah/diketik
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                provinsiAdapter.filter.filter(s)
+                adapter.filter.filter(s)
             }
 
         })
@@ -78,10 +79,10 @@ class ProvinsiActivity : AppCompatActivity() {
             Log.i("testingOfflineProv", it.toString())
             if (it.isNotEmpty()) {
                 Log.i("testing", "pengguna lama")
-                provinsiAdapter.addListProvinsi(it.sortedByDescending { data -> data.Kasus_Posi })
+                setupAdapter(binding.rvProvinsi, it.sortedByDescending { data -> data.Kasus_Posi })
             } else {
                 Log.i("testing", "pengguna baru")
-                provinsiAdapter.addListProvinsi(it)
+                setupAdapter(binding.rvProvinsi, it.sortedByDescending { data -> data.Kasus_Posi })
             }
         })
 
@@ -97,5 +98,26 @@ class ProvinsiActivity : AppCompatActivity() {
                 Intent.FLAG_ACTIVITY_CLEAR_TOP
             ))
         }
+    }
+
+    private fun setupAdapter(recyclerView: RecyclerView, items: List<DataProvinsiDB>) {
+        adapter.adapterCallback(adapterCallback)
+            .setLayout(R.layout.item_provinsi)
+            .filterable()
+            .addData(items)
+            .isVerticalView()
+            .build(recyclerView)
+    }
+
+    private val adapterCallback = object : AdapterCallback<DataProvinsiDB> {
+        override fun initComponent(itemView: View, data: DataProvinsiDB, itemIndex: Int) {
+            itemView.tv_provinsi.text = data.Provinsi
+            itemView.tv_positif.text = data.Kasus_Posi.toString()
+            itemView.tv_sembuh.text = data.Kasus_Semb.toString()
+            itemView.tv_meninggal.text = data.Kasus_Meni.toString()
+        }
+
+        override fun onItemClicked(itemView: View, data: DataProvinsiDB, itemIndex: Int) { }
+
     }
 }
