@@ -2,12 +2,11 @@ package org.marproject.lawancovid19.ui.produktif
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.marproject.lawancovid19.R
 import org.marproject.lawancovid19.databinding.ActivityProduktifBinding
-import org.marproject.lawancovid19.ui.menu.MenuActivity
 import org.marproject.lawancovid19.utils.Constants.URL_GITHUB
 import org.marproject.lawancovid19.utils.Constants.URL_LEARN_ANDROID
 import org.marproject.lawancovid19.utils.Constants.URL_LEARN_WEB
@@ -29,12 +28,7 @@ class ProduktifActivity : AppCompatActivity() {
 
     private fun initUI() {
         // back button
-        binding.back.setOnClickListener {
-            startActivity(
-                Intent(this, MenuActivity::class.java).addFlags(
-                    Intent.FLAG_ACTIVITY_CLEAR_TOP
-                ))
-        }
+        binding.back.setOnClickListener { finish() }
 
         // belajar android
         binding.belajarAndroid.setOnClickListener {

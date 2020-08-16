@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.marproject.lawancovid19.R
 import org.marproject.lawancovid19.databinding.ActivityStatistikInterBinding
+import org.marproject.lawancovid19.utils.Constants
 import org.marproject.lawancovid19.utils.Constants.URL_STATISTIK_GLOBAL
 
 
@@ -25,31 +26,30 @@ class StatistikInterActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_statistik_inter)
 
         // back button
-        binding.back.setOnClickListener {
-            startActivity(
-                Intent(this, GlobalActivity::class.java).addFlags(
-                    Intent.FLAG_ACTIVITY_CLEAR_TOP
-                ))
-        }
+        binding.back.setOnClickListener { finish() }
 
         // webview init
+        // webview init
         webView = binding.webview
-        webView.settings.loadsImagesAutomatically = true
-        webView.settings.javaScriptEnabled = true
-        webView.settings.domStorageEnabled = true
+        webView.apply {
+            settings.loadsImagesAutomatically = true
+            settings.javaScriptEnabled = true
+            settings.domStorageEnabled = true
 
-        // zoom support
-        webView.settings.supportZoom()
-        webView.settings.builtInZoomControls = true
-        webView.settings.displayZoomControls = false
+            // zoom support
+            settings.supportZoom()
+            settings.builtInZoomControls = true
+            settings.displayZoomControls = false
 
-        // scroll support
-        webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
-        webView.webViewClient = WebViewClient()
-        webView.loadUrl(URL_STATISTIK_GLOBAL)
+            // scroll support
+            scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
+            webViewClient = WebViewClient()
+            loadUrl(URL_STATISTIK_GLOBAL)
 
-        webToolbar()
-        webView.webViewClient = loadingHandler
+            // loading handler
+            webViewClient = loadingHandler
+            webToolbar()
+        }
     }
 
     private fun webToolbar() {

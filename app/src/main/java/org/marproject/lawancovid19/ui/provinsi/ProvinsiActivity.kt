@@ -1,13 +1,12 @@
 package org.marproject.lawancovid19.ui.provinsi
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +15,6 @@ import org.marproject.lawancovid19.R
 import org.marproject.lawancovid19.database.DataProvinsiDB
 import org.marproject.lawancovid19.databinding.ActivityProvinsiBinding
 import org.marproject.lawancovid19.ui.CoronaViewModel
-import org.marproject.lawancovid19.ui.menu.MenuActivity
 import org.marproject.lawancovid19.utils.Constants.SEARCH_HINT
 import org.marproject.reusablerecyclerviewadapter.ReusableAdapter
 import org.marproject.reusablerecyclerviewadapter.interfaces.AdapterCallback
@@ -43,9 +41,11 @@ class ProvinsiActivity : AppCompatActivity() {
 
         // init material searchbar
         val searchBar = binding.searchBar
-        searchBar.setHint(SEARCH_HINT)
-        searchBar.setPlaceHolder(SEARCH_HINT)
-        searchBar.setSearchIcon(R.drawable.ic_search)
+        searchBar.apply {
+            setHint(SEARCH_HINT)
+            setPlaceHolder(SEARCH_HINT)
+            setSearchIcon(R.drawable.ic_search)
+        }
 
         // searchbar event
         searchBar.addTextChangeListener(object : TextWatcher {
@@ -93,11 +93,7 @@ class ProvinsiActivity : AppCompatActivity() {
             }
         })
 
-        binding.back.setOnClickListener {
-            startActivity(Intent(this, MenuActivity::class.java).addFlags(
-                Intent.FLAG_ACTIVITY_CLEAR_TOP
-            ))
-        }
+        binding.back.setOnClickListener { finish() }
     }
 
     private fun setupAdapter(recyclerView: RecyclerView, items: List<DataProvinsiDB>) {

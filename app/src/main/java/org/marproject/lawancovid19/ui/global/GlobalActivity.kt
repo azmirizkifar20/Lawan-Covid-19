@@ -1,16 +1,15 @@
 package org.marproject.lawancovid19.ui.global
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import org.marproject.lawancovid19.R
 import org.marproject.lawancovid19.databinding.ActivityGlobalBinding
 import org.marproject.lawancovid19.ui.CoronaViewModel
-import org.marproject.lawancovid19.ui.menu.MenuActivity
 import org.marproject.lawancovid19.utils.Constants.DATE_PATTERN
 import org.marproject.lawancovid19.utils.getCurrentDateTime
 import org.marproject.lawancovid19.utils.toStringFormat
@@ -57,12 +56,7 @@ class GlobalActivity : AppCompatActivity() {
         })
 
         // back button
-        binding.back.setOnClickListener {
-            startActivity(
-                Intent(this, MenuActivity::class.java).addFlags(
-                    Intent.FLAG_ACTIVITY_CLEAR_TOP
-                ))
-        }
+        binding.back.setOnClickListener { finish() }
 
         // layanan bantuan
         binding.btnStatistik.setOnClickListener {

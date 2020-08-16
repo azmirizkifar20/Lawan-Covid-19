@@ -1,6 +1,5 @@
 package org.marproject.lawancovid19.ui.produktif
 
-import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.KeyEvent
@@ -11,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.marproject.lawancovid19.R
 import org.marproject.lawancovid19.databinding.ActivityBeritaTerkiniBinding
-import org.marproject.lawancovid19.utils.Constants
+import org.marproject.lawancovid19.utils.Constants.URL_BERITA
 
 
 @Suppress("SpellCheckingInspection")
@@ -25,31 +24,29 @@ class BeritaTerkiniActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_berita_terkini)
 
         // back button
-        binding.back.setOnClickListener {
-            startActivity(
-                Intent(this, ProduktifActivity::class.java).addFlags(
-                    Intent.FLAG_ACTIVITY_CLEAR_TOP
-                ))
-        }
+        binding.back.setOnClickListener { finish() }
 
         // webview init
         webView = binding.webview
-        webView.settings.loadsImagesAutomatically = true
-        webView.settings.javaScriptEnabled = true
-        webView.settings.domStorageEnabled = true
+        webView.apply {
+            settings.loadsImagesAutomatically = true
+            settings.javaScriptEnabled = true
+            settings.domStorageEnabled = true
 
-        // zoom support
-        webView.settings.supportZoom()
-        webView.settings.builtInZoomControls = true
-        webView.settings.displayZoomControls = false
+            // zoom support
+            settings.supportZoom()
+            settings.builtInZoomControls = true
+            settings.displayZoomControls = false
 
-        // scroll support
-        webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
-        webView.webViewClient = WebViewClient()
-        webView.loadUrl(Constants.URL_BERITA)
+            // scroll support
+            scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
+            webViewClient = WebViewClient()
+            loadUrl(URL_BERITA)
 
-        webToolbar()
-        webView.webViewClient = loadingHandler
+            // loading handler
+            webViewClient = loadingHandler
+            webToolbar()
+        }
     }
 
     private fun webToolbar() {

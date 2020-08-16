@@ -1,13 +1,12 @@
 package org.marproject.lawancovid19.ui.produktif
 
-import android.content.Intent
 import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.marproject.lawancovid19.R
 import org.marproject.lawancovid19.databinding.ActivityBacaTutorialBinding
@@ -24,31 +23,29 @@ class BacaTutorialActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_baca_tutorial)
 
         // back button
-        binding.back.setOnClickListener {
-            startActivity(
-                Intent(this, ProduktifActivity::class.java).addFlags(
-                    Intent.FLAG_ACTIVITY_CLEAR_TOP
-                ))
-        }
+        binding.back.setOnClickListener { finish() }
 
         // webview init
         webView = binding.webview
-        webView.settings.loadsImagesAutomatically = true
-        webView.settings.javaScriptEnabled = true
-        webView.settings.domStorageEnabled = true
+        webView.apply {
+            settings.loadsImagesAutomatically = true
+            settings.javaScriptEnabled = true
+            settings.domStorageEnabled = true
 
-        // zoom support
-        webView.settings.supportZoom()
-        webView.settings.builtInZoomControls = true
-        webView.settings.displayZoomControls = false
+            // zoom support
+            settings.supportZoom()
+            settings.builtInZoomControls = true
+            settings.displayZoomControls = false
 
-        // scroll support
-        webView.scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
-        webView.webViewClient = WebViewClient()
-        webView.loadUrl(URL_MEDIUM)
+            // scroll support
+            scrollBarStyle = View.SCROLLBARS_INSIDE_OVERLAY
+            webViewClient = WebViewClient()
+            loadUrl(URL_MEDIUM)
 
-        webToolbar()
-        webView.webViewClient = loadingHandler
+            // loading handler
+            webViewClient = loadingHandler
+            webToolbar()
+        }
     }
 
     private fun webToolbar() {
